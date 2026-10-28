@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071323">
+  <title>Speed Rush 3D</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="game-wrap">
+    <canvas id="game" aria-label="Jogo Speed Rush 3D"></canvas>
+
+    <section id="hud" class="hidden" aria-live="polite">
+      <div class="hud-card">
+        <span class="label">DISTÂNCIA</span>
+        <strong id="distance">0 m</strong>
+      </div>
+      <div class="hud-card">
+        <span class="label">VELOCIDADE</span>
+        <strong id="speed">0 km/h</strong>
+      </div>
+      <div class="hud-card">
+        <span class="label">PONTOS</span>
+        <strong id="score">0</strong>
+      </div>
+    </section>
+
+    <div id="mobileControls" class="mobile-controls hidden"
+         aria-label="Controles do jogo para celular">
+      <div class="steering-controls">
+        <button class="game-control" type="button"
+                data-control="arrowleft" aria-label="Virar para a esquerda">◀</button>
+        <button class="game-control" type="button"
+                data-control="arrowright" aria-label="Virar para a direita">▶</button>
+      </div>
+
+      <div class="pedal-controls">
+        <button class="game-control brake-control" type="button"
+                data-control="arrowdown" aria-label="Frear">▼<span>FREIO</span></button>
+        <button class="game-control accelerate-control" type="button"
+                data-control="arrowup" aria-label="Acelerar">▲<span>ACELERAR</span></button>
+      </div>
+    </div>
+
+    <section id="overlay" class="screen">
+      <div class="eyebrow">NIGHT DRIVE / 03</div>
+      <h1>SPEED <span>RUSH</span></h1>
+      <p class="subtitle">FUGA NA ESTRADA</p>
+      <p class="intro">
+        Desvie do trânsito, escape da viatura e atravesse a cidade sem bater.
+      </p>
+
+      <label class="weather-label" for="weatherSelect">CLIMA E HORÁRIO</label>
+      <select id="weatherSelect" class="weather-select">
+        <option value="sunset">Pôr do sol</option>
+        <option value="day">Dia</option>
+        <option value="night">Noite</option>
+        <option value="rain">Chuva</option>
+        <option value="snow">Neve</option>
+      </select>
+
+      <button id="startButton" type="button">
+        INICIAR CORRIDA <span>↗</span>
+      </button>
+
+      <p class="controls-note">
+        W / ↑ ACELERAR &nbsp; • &nbsp; S / ↓ FREAR<br>
+        A / ← E D / → DESVIAR<br>
+        <span class="mobile-note">NO CELULAR: USE OS BOTÕES NA TELA</span>
+      </p>
+
+      <p id="menuMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="gameOver" class="screen hidden">
+      <div class="eyebrow">FIM DE CORRIDA</div>
+      <h2>VOCÊ FOI<br><span>ALCANÇADO</span></h2>
+      <p id="finalStats">Distância: 0 m · Pontos: 0</p>
+      <button id="restartButton" type="button">
+        TENTAR NOVAMENTE ↗
+      </button>
+    </section>
+
+    <div id="loading" class="loading">CARREGANDO AMBIENTE…</div>
+    <div id="errorMessage" class="error-message hidden" role="alert"></div>
+  </main>
+
+  <script type="module" src="java/script.js"></script>
+</body>
+</html>
