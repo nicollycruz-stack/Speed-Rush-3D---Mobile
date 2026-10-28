@@ -289,7 +289,7 @@ const windowMat = new THREE.MeshStandardMaterial({
   color: 0xffdca0, emissive: 0xffb94a, emissiveIntensity: 0.22, roughness: 0.55
 });
 
-function addBuilding(x, z, width, height, depth, material) 
+function addBuilding(x, z, width, height, depth, material) {
   const group = new THREE.Group();
   const building = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), material);
   building.position.y = height / 2;
@@ -298,9 +298,7 @@ function addBuilding(x, z, width, height, depth, material)
   group.add(building);
   
   // Detalhes extras na fachada dos prédios.
-### PARTE 2 DE 3
 
-```javascript
   const facadeDetail = new THREE.Group();
 
   // Faixas verticais para dar profundidade à fachada.
