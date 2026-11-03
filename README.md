@@ -62,3 +62,6 @@ Também foi utilizada para sugerir soluções para problemas encontrados durante
 🏎️ Prepare-se para a fuga!
 
 Acelere, desvie dos obstáculos e tente escapar da polícia!
+
+Link do jogo: 
+https://nicollycruz-stack.github.io/Speed-Rush-3D---Mobile/
